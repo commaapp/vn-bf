@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cta_reset_custem_font_size"
+    style="@style/TextAppearance.AppCompat.Title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@drawable/shape_btn_create_font_size"
+    android:gravity="center"
+    android:padding="15dp"
+    android:text="@string/reset_custem_font_size_to_default"
+    android:textColor="@color/colorWhite"
+    android:textSize="20sp" />
