@@ -1,4 +1,4 @@
-package com.bigfont.mvp.main;
+package core;
 
 import android.app.Dialog;
 import android.content.ActivityNotFoundException;
@@ -24,9 +24,6 @@ import android.widget.Toast;
 
 import com.bigfont.demo.BuildConfig;
 import com.bigfont.demo.R;
-import com.bigfont.mvp.suc.SuccActivity;
-import com.bigfont.obj.AdaptorFontScale;
-import com.bigfont.obj.ItemFont;
 import com.crashlytics.android.Crashlytics;
 import com.crashlytics.android.core.CrashlyticsCore;
 import com.facebook.FacebookSdk;

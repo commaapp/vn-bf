@@ -1,4 +1,4 @@
-package com.bigfont.mvp.main;
+package core;
 
 import android.content.Context;
 import android.content.SharedPreferences;

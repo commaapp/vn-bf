@@ -1,4 +1,4 @@
-package com.bigfont.mvp.main;
+package core;
 
 import android.support.multidex.MultiDexApplication;
 

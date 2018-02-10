@@ -1,4 +1,4 @@
-package com.bigfont.obj;
+package core;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -18,9 +18,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bigfont.demo.R;
-import com.bigfont.mvp.main.Config;
-import com.bigfont.mvp.main.MainActivity;
-import com.bigfont.mvp.main.MyLog;
 
 import java.util.ArrayList;
 

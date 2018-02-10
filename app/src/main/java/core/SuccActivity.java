@@ -1,4 +1,4 @@
-package com.bigfont.mvp.suc;
+package core;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -12,9 +12,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.bigfont.demo.R;
-import com.bigfont.mvp.main.Config;
-import com.bigfont.mvp.main.MainActivity;
-import com.bigfont.mvp.main.MyLog;
+import core.Config;
+import core.MainActivity;
+import core.MyLog;
 import com.facebook.appevents.AppEventsLogger;
 
 /**

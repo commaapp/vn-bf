@@ -1,4 +1,4 @@
-package com.bigfont.mvp.main;
+package core;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -7,8 +7,6 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.bigfont.demo.R;
-import com.bigfont.obj.ItemFont;
-import com.facebook.ads.internal.e;
 
 import java.util.ArrayList;
 
