@@ -22,8 +22,8 @@ android {
         applicationId "com.vn.largefontsize.bigfont.changefontsize.chuto.enlargefont"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 8
-        versionName "1.0.7"
+        versionCode 13
+        versionName "1.1.2"
         multiDexEnabled true
     }
     buildTypes {
@@ -32,6 +32,10 @@ android {
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
     }
 }
 
@@ -50,4 +54,5 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:' + rootProject.jakewhartonButterknife
     implementation 'com.android.support:design:27.0.2'
     implementation project(':ads')
+    implementation project(':adcross')
 }

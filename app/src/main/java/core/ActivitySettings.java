@@ -5,11 +5,13 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 
 import com.bigfont.demo.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import cross.CrossNativeAd;
 import facebook.FacebookNativeAdFragment;
 import inter.OnErrorLoadAd;
 import richadx.RichNativeAdFragment;
@@ -47,8 +49,13 @@ public class ActivitySettings extends AppCompatActivity {
         try {
             richNativeAdFragment = new RichNativeAdFragment();
             facebookNativeAdFragment = new FacebookNativeAdFragment();
-
-
+            facebookNativeAdFragment.setIdAd("207364999832740_222110648358175");
+            richNativeAdFragment.setOnErrorLoadAd(new OnErrorLoadAd() {
+                @Override
+                public void onError() {
+                    new CrossNativeAd(ActivitySettings.this, (LinearLayout) findViewById(R.id.frame_ad)).show();
+                }
+            });
             facebookNativeAdFragment.setOnErrorLoadAd(new OnErrorLoadAd() {
                 @Override
                 public void onError() {

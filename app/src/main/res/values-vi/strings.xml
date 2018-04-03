@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Phông Chữ Lớn</string>
+    <string name="app_name">Phông chữ lớn</string>
     <string name="sologan">Nâng cao trải nghiệm sử dụng của bạn</string>
     <string name="dialog_choose_title">Bạn có chắc chắn thực hiện thay đổi này?</string>
     <string name="btn_cancel">Không</string>
@@ -21,18 +21,15 @@
     <string name="txt_noti_restart_device">Bạn cần phải khởi động lại máy để hoàn tất thay đổi và trải nghiệm phông chữ lớn trên máy!</string>
     <string name="txt_btn_unselected">Thực hiện</string>
     <string name="requestPermission">Cho phép ứng dụng thay đổi cài đặt để có phông chữ lớn?</string>
-    <string name="facebook_app_id">484972525201272</string>
-    <string name="MainScreen_Footer_NativeAds_High300">484972525201272_491909397840918</string>
-    <string name="RestartLaterScreen_Bottom_NativeAds_High300">484972525201272_491909774507547</string>
-    <string name="txt_rate">Please rate 5 star for me!!!</string>
+    <string name="txt_rate">Đánh giá 5* để hỗ trợ chúng tôi nhé! Cảm ơn bạn!</string>
     <string name="download">Tải về</string>
     <string name="cp_hot_apps">Thêm những ứng dụng</string>
     <string name="content_noti">Bạn có muốn đổi kích cỡ chữ?</string>
     <string name="title_noti">Cỡ chữ hiện tại:</string>
     <string name="lbl_later">Để sau</string>
     <string name="lbl_rate">Đánh giá</string>
-    <string name="rate_us">Vui lòng đánh giá cho chúng tôi 5 sao </string>
-    <string name="sms_thank_you_rate">Cảm ơn rất nhiều !</string>
+    <string name="rate_us">Đánh giá 5* để hỗ trợ chúng tôi nhé! Cảm ơn bạn!</string>
+    <string name="sms_thank_you_rate">Đánh giá 5 sao cho chúng tôi nhé!</string>
     <string name="create_custem_font_size">Tạo tùy chỉnh cỡ chữ</string>
     <string name="reset_custem_font_size_to_default">Trở về cỡ chữ mặc định</string>
     <string name="apply_new_font">Bạn có đồng ý áp dụng ngay phông chữ mới chọn này?</string>
@@ -45,4 +42,5 @@
     <string name="create_new_font">Bạn có muốn tạo mới cỡ chữ này?</string>
     <string name="toast_apply">Khởi động lại máy để đổi cỡ chữ</string>
     <string name="create_font_size_text_preview">Xin chào</string>
+    <string name="notify_setting" translatable="false">Bật/tắt Thanh thông báo</string>
 </resources>

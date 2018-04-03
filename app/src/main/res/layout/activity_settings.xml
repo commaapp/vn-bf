@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="5dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="5dp">
 
     <CheckBox
         android:id="@+id/cb_show_noti"
@@ -20,8 +20,8 @@
         android:layout_weight="1" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/frame_ad"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
         android:orientation="vertical" />
 </LinearLayout>

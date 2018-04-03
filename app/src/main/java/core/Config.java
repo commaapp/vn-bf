@@ -45,12 +45,15 @@ public class Config {
         // Build notification
         String title = ((int) ((MyLog.getFloatValueByName(context, Config.LOG_APP, Config.FONT_SCALE) * 100)) + "%");
         // Actions are just fake
-        Notification noti = new Notification.Builder(context)
-                .setContentTitle(context.getResources().getString(R.string.title_noti) + " " + title)
-                .setContentText(context.getResources().getString(R.string.content_noti))
-                .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentIntent(pIntent)
-                .build();
+        Notification noti = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
+            noti = new Notification.Builder(context)
+                    .setContentTitle(context.getResources().getString(R.string.title_noti) + " " + title)
+                    .setContentText(context.getResources().getString(R.string.content_noti))
+                    .setSmallIcon(R.mipmap.ic_launcher)
+                    .setContentIntent(pIntent)
+                    .build();
+        }
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(NOTIFICATION_SERVICE);
         // hide the notification after its selected
         noti.flags |= Notification.FLAG_NO_CLEAR;

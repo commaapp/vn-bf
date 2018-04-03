@@ -21,9 +21,7 @@
     <string name="txt_noti_restart_device">Please restart your device to complete this change and have big font size on your phone!</string>
     <string name="txt_btn_unselected">Apply</string>
     <string name="requestPermission">You need grant permission to write settings to able big font</string>
-    <string name="facebook_app_id">207364999832740</string>
-    <string name="RestartLaterScreen_Bottom_NativeAds_High300">ads</string>
-    <string name="MainScreen_Footer_NativeAds_High300">ads</string>
+    <string name="facebook_app_id" translatable="false">207364999832740</string>
     <string name="cp_hot_apps">Download more apps</string>
     <string name="txt_rate">Please rate 5 star for me!!!</string>
     <string name="content_noti">Click to change your font size?</string>
@@ -44,5 +42,7 @@
     <string name="create_new_font">Are you sure to create new font size?</string>
     <string name="toast_apply">Please restart your devices</string>
     <string name="create_font_size_text_preview">Hello</string>
-    <string name="notify_setting" translatable="false">Show state on status bar</string>
+    <string name="notify_setting">On/Off notification on status bar</string>
+    <string name="RestartLaterScreen_Bottom_NativeAds_High300" translatable="false">ads</string>
+    <string name="MainScreen_Footer_NativeAds_High300" translatable="false">ads</string>
 </resources>

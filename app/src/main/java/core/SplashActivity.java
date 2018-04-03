@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.bigfont.demo.R;
 
+import cross.CrossFullscreenAd;
 import facebook.FacebookInterstitialFragment;
 import inter.OnErrorLoadAd;
 import richadx.RichInterstialAdFragment;
@@ -17,6 +18,7 @@ import richadx.RichInterstialAdFragment;
 public class SplashActivity extends AppCompatActivity {
     FacebookInterstitialFragment facebookInterstitialFragment;
     RichInterstialAdFragment richInterstialAdFragment;
+
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         //No call for super(). Bug on API Level > 11.
@@ -37,26 +39,23 @@ public class SplashActivity extends AppCompatActivity {
 
 
         facebookInterstitialFragment = new FacebookInterstitialFragment();
-
-                try {
-                    richInterstialAdFragment.setOnErrorLoadAd(new OnErrorLoadAd() {
-
+        try {
+            richInterstialAdFragment.setOnErrorLoadAd(new OnErrorLoadAd() {
+                @Override
+                public void onError() {
+                    facebookInterstitialFragment.setOnErrorLoadAd(new OnErrorLoadAd() {
                         @Override
                         public void onError() {
-                            facebookInterstitialFragment.setOnErrorLoadAd(new OnErrorLoadAd() {
-                                @Override
-                                public void onError() {
-                                    finish();
-                                }
-                            });
-                            getSupportFragmentManager().beginTransaction().replace(R.id.frame_ad, facebookInterstitialFragment).commitAllowingStateLoss();
+                            CrossFullscreenAd.show(SplashActivity.this);
                         }
                     });
-                    getSupportFragmentManager().beginTransaction().replace(R.id.frame_ad, richInterstialAdFragment).commitAllowingStateLoss();
-                } catch (Exception e) {
-                    finish();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.frame_ad, facebookInterstitialFragment).commitAllowingStateLoss();
                 }
-
+            });
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame_ad, richInterstialAdFragment).commitAllowingStateLoss();
+        } catch (Exception e) {
+            finish();
+        }
 
 
     }

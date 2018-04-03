@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
@@ -27,9 +28,17 @@ import com.bigfont.demo.R;
 import com.crashlytics.android.Crashlytics;
 import com.crashlytics.android.core.CrashlyticsCore;
 import com.facebook.FacebookSdk;
+import com.facebook.ads.AdSettings;
 import com.facebook.appevents.AppEventsLogger;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLConnection;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -47,30 +56,28 @@ public class MainActivity extends AppCompatActivity {
     TextView ctaResetCustemFontSize;
     private View convertView;
     private float size;
+
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         //No call for super(). Bug on API Level > 11.
     }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Set up Crashlytics, disabled for debug builds
-        Crashlytics crashlyticKit = new Crashlytics.Builder()
-                .core(new CrashlyticsCore.Builder().disabled(BuildConfig.DEBUG).build())
-                .build();
+        Crashlytics crashlyticKit = new Crashlytics.Builder().core(new CrashlyticsCore.Builder().disabled(BuildConfig.DEBUG).build()).build();
         Fabric.with(this, crashlyticKit, new Crashlytics());
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
         FacebookSdk.sdkInitialize(getApplicationContext());
         logger = AppEventsLogger.newLogger(this);
         Config.createNotification(this);
         getSupportActionBar().hide();
-
-        startActivity(new Intent(this, SplashActivity.class));
-
+        AdSettings.addTestDevice("4525217d5fe36225baaad440be5f3062");
         ImageView imRate = findViewById(R.id.ic_rate);
-
+        startActivity(new Intent(this, SplashActivity.class));
         imRate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -117,18 +124,18 @@ public class MainActivity extends AppCompatActivity {
             richBannerAdFragment = new RichBannerAdFragment();
             facebookBannerFragment = new FacebookBannerFragment();
             facebookBannerFragment.setOnErrorLoadAd(new OnErrorLoadAd() {
+                @Override
+                public void onError() {
+                    richBannerAdFragment.setOnErrorLoadAd(new OnErrorLoadAd() {
                         @Override
                         public void onError() {
-                            richBannerAdFragment.setOnErrorLoadAd(new OnErrorLoadAd() {
-                                @Override
-                                public void onError() {
-                                    findViewById(R.id.ad_banner).setVisibility(View.GONE);
-                                }
-                            });
-                            getSupportFragmentManager().beginTransaction().replace(R.id.ad_banner, richBannerAdFragment).commitAllowingStateLoss();
+                            findViewById(R.id.ad_banner).setVisibility(View.GONE);
                         }
                     });
-                    getSupportFragmentManager().beginTransaction().replace(R.id.ad_banner, facebookBannerFragment).commitAllowingStateLoss();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.ad_banner, richBannerAdFragment).commitAllowingStateLoss();
+                }
+            });
+            getSupportFragmentManager().beginTransaction().replace(R.id.ad_banner, facebookBannerFragment).commitAllowingStateLoss();
 
         } catch (Exception e) {
         }
@@ -274,7 +281,6 @@ public class MainActivity extends AppCompatActivity {
         dialog1.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog1.setContentView(R.layout.custom_dialog_rate);
         dialog1.setCancelable(true);
-
         final TextView btnRate = dialog1.findViewById(R.id.btnRate);
         TextView btnLater = dialog1.findViewById(R.id.btnLater);
 

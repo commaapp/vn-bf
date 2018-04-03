@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/adcross/adcross.iml" filepath="$PROJECT_DIR$/adcross/adcross.iml" />
       <module fileurl="file://$PROJECT_DIR$/ads/ads.iml" filepath="$PROJECT_DIR$/ads/ads.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/vn-bigfont.iml" filepath="$PROJECT_DIR$/vn-bigfont.iml" />
